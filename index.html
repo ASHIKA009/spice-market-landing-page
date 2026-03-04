@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spice Market — Fresh, Authentic Spices</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #b7410e;
+      --dark: #1f1f1f;
+      --muted: #6b6b6b;
+      --bg: #fff8f3;
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #ffffff);
+      color: var(--dark);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 2rem;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #d9733a, #8e2a0a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 22px;
+      box-shadow: 0 12px 30px rgba(142,42,10,0.25);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-name {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .brand-tag {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-block;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(183,65,14,0.2);
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 2rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin: 0 0 1rem;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .hero-image {
+  background-image: url('images/hero-img.png');      
+  background-size: cover;
+      background-position: center;
+      border-radius: 16px;
+      height: 340px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+    }
+
+    /* Benefits */
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    .benefit-box {
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+    }
+
+    .benefit-box h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Products */
+    .products {
+      margin-top: 4rem;
+    }
+
+    .products h2 {
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .price {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    .testimonial-box {
+      max-width: 700px;
+      margin: 1.5rem auto;
+      padding: 1.5rem;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    /* Final CTA */
+    .final-cta {
+      margin-top: 4rem;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #8e2a0a, #d9733a);
+      color: #fff;
+      text-align: center;
+      border-radius: 18px;
+    }
+
+    .final-cta h2 {
+      font-family: "Playfair Display", serif;
+      margin-bottom: 1.2rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media(max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .benefits { grid-template-columns: 1fr 1fr; }
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media(max-width: 550px) {
+      .benefits, .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <div class="brand">
+        <div class="logo-box">SM</div>
+        <div class="brand-text">
+          <div class="brand-name">Spice Market</div>
+          <div class="brand-tag">Premium Whole Spices & Blends</div>
+        </div>
+      </div>
+      <a href="#products" class="btn">Shop Now</a>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Turn Everyday Cooking Into Extraordinary Flavor</h1>
+        <p>Premium whole spices and handcrafted blends sourced directly from trusted farmers. Freshly packed. Rich in aroma. Full of character.</p>
+        <a href="#products" class="btn">Buy Premium Spices</a>
+      </div>
+      <div class="hero-image"></div>
+    </section>
+
+    <section class="benefits">
+      <div class="benefit-box">
+        <h4>100% Natural</h4>
+        <p>No additives. No preservatives. Just pure spice.</p>
+      </div>
+      <div class="benefit-box">
+        <h4>Farm to Pantry</h4>
+        <p>Sourced ethically and packed at peak freshness.</p>
+      </div>
+      <div class="benefit-box">
+        <h4>Rich Aroma</h4>
+        <p>Experience bold flavor in every pinch.</p>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <h2>Customer Favorites</h2>
+      <div class="grid">
+        <div class="card">
+        <img src="images/cardamon.webp" alt="Cardamom">        
+          <h4>Green Cardamom</h4>
+          <p class="price">$8.50 / 50g</p>
+        </div>
+        <div class="card">
+          <img src="images/turmeric.jpg" alt="Turmeric">
+          <h4>Organic Turmeric</h4>
+          <p class="price">$6.00 / 50g</p>
+        </div>
+        <div class="card">
+          <img src="images/Garam-Masala.jpg" alt="Garam Masala">
+          <h4>Signature Garam Masala</h4>
+          <p class="price">$7.25 / 40g</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonial-box">
+        "The aroma is incredible. My curries have never tasted this fresh before!" — Verified Buyer
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <h2>Ready to Elevate Your Cooking?</h2>
+      <a href="#products" class="btn">Shop Fresh Spices Now</a>
+    </section>
+
+    <footer>
+      © 2026 Spice Market • Premium Whole Spices & Blends
+    </footer>
+
+  </div>
+
+</body>
+</html>
